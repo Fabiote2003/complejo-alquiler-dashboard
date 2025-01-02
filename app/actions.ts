@@ -4,6 +4,7 @@ import { encodedRedirect } from "@/utils/utils";
 import { createClient } from "@/utils/supabase/server";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
+import {z} from "zod";
 
 export const signUpAction = async (formData: FormData) => {
   const email = formData.get("email")?.toString();
@@ -39,18 +40,23 @@ export const signUpAction = async (formData: FormData) => {
   }
 };
 
-export const signInAction = async (formData: FormData) => {
-  const email = formData.get("email") as string;
-  const password = formData.get("password") as string;
-  const supabase = await createClient();
+//Genera un zod schema para validar los datos del formulario
+const signInSchema = z.object({
+  email: z.string().email(),
+  password: z.string().min(4),
+});
 
-  const { error } = await supabase.auth.signInWithPassword({
+export const signInAction = async (email: string, password: string) => {
+
+  const supabase = await createClient();
+ 
+  const { error, data } = await supabase.auth.signInWithPassword({
     email,
     password,
   });
 
   if (error) {
-    return encodedRedirect("error", "/sign-in", error.message);
+    return encodedRedirect("error", "/iniciar-sesion", "Contraseña o email incorrectos.");
   }
 
   return redirect("/protected");
@@ -130,5 +136,5 @@ export const resetPasswordAction = async (formData: FormData) => {
 export const signOutAction = async () => {
   const supabase = await createClient();
   await supabase.auth.signOut();
-  return redirect("/sign-in");
+  return redirect("/iniciar-sesion");
 };

@@ -22,6 +22,12 @@ export default function Header() {
           className="font-semibold text-gray-700 hover:text-green-500 transition-colors"
           href={"/alquileres"}
         >
+          Servicios
+        </Link>
+        <Link
+          className="font-semibold text-gray-700 hover:text-green-500 transition-colors"
+          href={"/alquileres"}
+        >
           Galería
         </Link>
         <Link

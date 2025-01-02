@@ -1,0 +1,43 @@
+[
+    {
+        "id": 1,
+        "name": "Casa pequeña",
+        "description": "Acogedora casa de tamaño compacto que ofrece una habitación, comedor, cocina y baño, perfecta para disfrutar de una estadía íntima y relajada.",
+        "images": [
+            "/images/casa-chica/imagen1_1_11zon.webp",
+            "/images/casa-chica/imagen2_2_11zon.webp",
+            "/images/casa-chica/imagen3_3_11zon.webp",
+            "/images/casa-chica/imagen4_4_11zon.webp",
+            "/images/casa-chica/imagen5_5_11zon.webp",
+            "/images/casa-chica/imagen6_6_11zon.webp",
+            "/images/casa-chica/imagen7_7_11zon.webp",
+            "/images/casa-chica/imagen8_8_11zon.webp",
+            "/images/casa-chica/imagen9_9_11zon.webp"
+        ],
+        "services": ["Cocina", "1 Baño", "1 habitación", "Parrilla", "Comedor", "Wifi", "Heladera", "Freezer", "Sofa cama", "Piscina"],
+        "precio": 50000,
+        "descuento": 5000,
+        "imagen_principal": "/images/casa-chica/imagen5_5_11zon.webp"
+    },
+    {
+        "id": 2,
+        "name": "Casa grande",
+        "description": "Amplia casa que dispone de dos habitaciones, comedor, living con cocina integrada, parrilla, galería y baño, ideal para disfrutar de momentos inolvidables.",
+        "images": [
+            "/images/casa-grande/imagen0_11zon.webp",
+            "/images/casa-grande/imagen1_11zon.webp",
+            "/images/casa-grande/imagen3_11zon.webp",
+            "/images/casa-grande/imagen4_11zon.webp",
+            "/images/casa-grande/imagen5.webp",
+            "/images/casa-grande/imagen6.webp",
+            "/images/casa-grande/imagen7.webp",
+            "/images/casa-grande/imagen8_11zon.webp",
+            "/images/casa-grande/imagen9.webp",
+            "/images/casa-grande/imagen10.webp"
+        ],
+        "services": ["Cocina", "1 Baño", "2 habitaciones", "Parrilla", "Wifi", "Heladera", "Freezer", "Comedor", "Sofa cama", "Piscina"],
+        "precio": 65000,
+        "descuento": 5000,
+        "imagen_principal": "/images/casa-grande/imagen10.webp"
+    }
+]
