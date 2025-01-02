@@ -14,7 +14,7 @@ export default function Login() {
     resolver: zodResolver(userSchema),
   });
 
-  const onSubmit = async (data) => {
+  const onSubmit = async () => {
   }
 
   return (

@@ -42,7 +42,7 @@ export default function ReservaForm() {
           </label>
           <DatePicker
             selected={startDate}
-            onChange={(date) => setStartDate(date)}
+            onChange={(date: Date | null) => date && setStartDate(date)}
             selectsStart
             dateFormat={'dd/MM/yyyy'}
             startDate={startDate}
@@ -54,7 +54,7 @@ export default function ReservaForm() {
           <label htmlFor="" className="font-medium">Fecha de salida</label>
           <DatePicker
             selected={endDate}
-            onChange={(date) => setEndDate(date)}
+            onChange={(date: Date | null) => date && setEndDate(date)}
             selectsEnd
             startDate={startDate}
             dateFormat={'dd/MM/yyyy'}
