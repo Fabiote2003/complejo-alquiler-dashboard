@@ -14,9 +14,9 @@ import { FaParking } from "react-icons/fa";
 
 export default function Services() {
     return (
-        <section className="mx-auto max-w-6xl pt-16 pb-16">
+        <section className="mx-auto max-w-6xl pt-16 pb-16 px-5 lg:px-0">
             <h2 className="text-3xl text-center font-extrabold">¡Mirá nuestros Servicios!</h2>
-            <div className="px-4 grid grid-cols-3 gap-6 mt-4">
+            <div className="px-4 grid lg:grid-cols-3 gap-6 mt-4">
                 <div className="py-6 px-4 rounded-lg bg-gray-50 shadow-lg">
                     <BsFillHousesFill className="text-green-500 text-4xl" />
                     <h3 className="font-bold text-lg mt-2">2 casas equipadas</h3>
