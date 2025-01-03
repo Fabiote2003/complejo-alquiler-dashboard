@@ -13,7 +13,7 @@ function ResponsiveMenu() {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <IoMenu  className="text-green-600 text-3xl" width={'2rem'} />
+        <IoMenu  className="text-green-600 text-3xl lg:hidden" width={'2rem'} />
       </SheetTrigger>
       <SheetContent>
         <SheetHeader>

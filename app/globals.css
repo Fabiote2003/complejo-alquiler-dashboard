@@ -33,7 +33,7 @@
     forced-color-adjust: none;
   }
 
-  .dark {
+  /* .dark {
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
     --card: 0 0% 3.9%;
@@ -58,7 +58,7 @@
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
-  }
+  } */
 }
 
 @layer base {
@@ -72,11 +72,23 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    background-color: #ffffff !important;
-    color: #000000 !important;
+    background-color: white !important;
+    color: black !important;
   }
 }
 
+:root[data-theme="dark"],
+:root[data-theme="light"],
+html[data-theme="dark"],
+html[data-theme="light"],
 html {
+  color-scheme: only light !important;
+  forced-color-adjust: none !important;
+  background-color: white !important;
+  color: black !important;
   scroll-behavior: smooth;
+}
+
+* {
+  forced-color-adjust: none !important;
 }

@@ -46,6 +46,7 @@ export default function ReservaForm() {
             selectsStart
             dateFormat={'dd/MM/yyyy'}
             startDate={startDate}
+            minDate={startDate}
             endDate={endDate}
             className="px-3 border border-gray-300 rounded-md py-1 w-full"
           />
