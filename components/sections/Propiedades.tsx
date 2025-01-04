@@ -1,7 +1,6 @@
 import data from "@/lib/data.json";
 import { renderizarEmoji } from "@/components/renderizarEmoji";
 import { formatCurrency } from "@/lib/utils/formatCurrency";
-import { Button } from "@/components/ui/button";
 import Modal from "../Modal";
 
 export default function Propiedades() {
@@ -11,7 +10,7 @@ export default function Propiedades() {
             <h2 className="text-3xl text-center font-extrabold">Nuestras casas</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 py-6 px-4 lg:px-0 gap-5 lg:gap-0 place-items-center max-w-6xl mx-auto">
                 {data.map((propiedad) => (
-                    <div key={propiedad.id} className="shadow-lg w-full max-w-[450px] cursor-pointer rounded-lg">
+                    <div key={propiedad.id} className="shadow-lg w-full max-w-[450px] rounded-lg">
                         <div  className="h-[250px] w-full bg-cover bg-center rounded-tl-lg rounded-tr-lg" style={{ backgroundImage: `url(${propiedad.imagen_principal})` }}>
                         </div>
                         <div className="px-6 py-2 bg-white rounded-bl-lg rounded-br-lg">

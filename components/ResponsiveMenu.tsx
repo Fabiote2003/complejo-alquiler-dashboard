@@ -31,17 +31,9 @@ function ResponsiveMenu() {
           <SheetClose asChild>
             <Link
               className="font-semibold text-gray-700 hover:text-green-500 transition-colors"
-              href={"/alquileres"}
+              href={"#servicios"}
             >
               Servicios
-            </Link>
-          </SheetClose>
-          <SheetClose asChild>
-            <Link
-              className="font-semibold text-gray-700 hover:text-green-500 transition-colors"
-              href={"/alquileres"}
-            >
-              Galería
             </Link>
           </SheetClose>
           <SheetClose asChild>
@@ -55,7 +47,15 @@ function ResponsiveMenu() {
           <SheetClose asChild>
             <Link
               className="font-semibold text-gray-700 hover:text-green-500 transition-colors"
-              href={"/contacto"}
+              href={"#nuestroEspacio"}
+            >
+              Nuestro espacio
+            </Link>
+          </SheetClose>
+          <SheetClose asChild>
+            <Link
+              className="font-semibold text-gray-700 hover:text-green-500 transition-colors"
+              href={"#contacto"}
             >
               Contacto
             </Link>

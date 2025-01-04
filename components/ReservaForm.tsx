@@ -8,31 +8,76 @@ import "react-datepicker/dist/react-datepicker.css";
 export default function ReservaForm() {
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
+  const [cantidad, setCantidad] = useState('1');
+  const [casa, setCasa] = useState("casa-grande");
 
   useEffect(() => {
     setEndDate(startDate)
   }, [startDate])
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    // Formatear las fechas
+    const formatDate = (date: Date) => {
+      return date.toLocaleDateString('es-ES', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+      });
+    };
+
+    // Determinar qué casa se seleccionó
+    const getCasaText = () => {
+      switch(casa) {
+        case "casa-grande":
+          return "la casa grande";
+        case "casa-chica":
+          return "la casa chica";
+        case "ambas":
+          return "ambas casas";
+        default:
+          return "la casa grande";
+      }
+    };
+
+    // Construir el mensaje
+    const message = `Hola, deseo alquilar ${getCasaText()} de la quinta "La Familia" desde el ${formatDate(startDate)} al ${formatDate(endDate)}. Somos ${parseInt(cantidad)} personas.`;
+
+    // Codificar el mensaje para la URL
+    const encodedMessage = encodeURIComponent(message);
+
+    // Número de WhatsApp (reemplaza con el número correcto)
+    const phoneNumber = "5493794801183";
+
+    // Abrir WhatsApp
+    window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
+  };
 
   return (
     <div className="grid grid-cols-1 w-[350px] md:w-[500px] bg-white p-6 rounded-lg">
       <h1 className="text-black font-bold text-center text-2xl">
         Bienvenido a quinta "La Familia"
       </h1>
-      <form className="">
+      <form onSubmit={handleSubmit}>
         <div className="my-3">
           <label className="mb-1 block font-medium">¿Cual casa deseas reservar?</label>
-          <RadioGroup defaultValue="option-one" className="flex justify-between">
+          <RadioGroup 
+            defaultValue="casa-grande" 
+            className="flex justify-between"
+            onValueChange={(value) => setCasa(value)}
+          >
             <div className="flex items-center space-x-2">
-              <RadioGroupItem value="option-one" id="option-one" className="cursor-pointer" />
-              <Label htmlFor="option-one" className="cursor-pointer">Casa grande</Label>
+              <RadioGroupItem value="casa-grande" id="casa-grande" className="cursor-pointer" />
+              <Label htmlFor="casa-grande" className="cursor-pointer">Casa grande</Label>
             </div>
             <div className="flex items-center space-x-2">
-              <RadioGroupItem value="option-two" id="option-two" className="cursor-pointer"  />
-              <Label htmlFor="option-two" className="cursor-pointer">Casa chica</Label>
+              <RadioGroupItem value="casa-chica" id="casa-chica" className="cursor-pointer" />
+              <Label htmlFor="casa-chica" className="cursor-pointer">Casa chica</Label>
             </div>
             <div className="flex items-center space-x-2">
-              <RadioGroupItem value="option-three" id="option-three" className="cursor-pointer"  />
-              <Label htmlFor="option-three" className="cursor-pointer">Ambas</Label>
+              <RadioGroupItem value="ambas" id="ambas" className="cursor-pointer" />
+              <Label htmlFor="ambas" className="cursor-pointer">Ambas</Label>
             </div>
           </RadioGroup>
         </div>
@@ -46,7 +91,7 @@ export default function ReservaForm() {
             selectsStart
             dateFormat={'dd/MM/yyyy'}
             startDate={startDate}
-            minDate={startDate}
+            minDate={new Date()}
             endDate={endDate}
             className="px-3 border border-gray-300 rounded-md py-1 w-full"
           />
@@ -66,9 +111,21 @@ export default function ReservaForm() {
         </div>
         <div className="my-2">
           <label htmlFor="cantidad" className="font-medium">Cantidad de personas {'(adultos y niños)'}</label>
-          <input type="number" name="cantidad" id="cantidad" className="px-3 border border-gray-300 rounded-md py-1 w-full" placeholder="Ingresa la cantidad de personas" min={1} />
+          <input 
+            type="number" 
+            name="cantidad" 
+            id="cantidad" 
+            className="px-3 border border-gray-300 rounded-md py-1 w-full" 
+            placeholder="Ingresa la cantidad de personas" 
+            min={1}
+            value={cantidad}
+            onChange={(e) => setCantidad(e.target.value)}
+          />
         </div>
-        <button className="bg-green-600 w-full py-1 mt-3 rounded-md text-white font-semibold">
+        <button 
+          type="submit"
+          className="bg-green-600 w-full py-1 mt-3 rounded-md text-white font-semibold hover:bg-green-700 transition-colors"
+        >
           Reservar
         </button>
       </form>
