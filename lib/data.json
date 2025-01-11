@@ -14,7 +14,7 @@
             "/images/casa-chica/imagen8_8_11zon.webp",
             "/images/casa-chica/imagen9_9_11zon.webp"
         ],
-        "services": ["Cocina", "1 Baño", "1 habitación", "Parrilla", "Comedor", "Wifi", "Heladera", "Freezer", "Sofa cama", "Piscina"],
+        "services": ["Cocina", "1 Baño", "1 habitación", "Parrilla", "Comedor", "Wifi", "Heladera", "Freezer", "Aire acondicionado", "Sofa cama", "Piscina"],
         "precio": 50000,
         "descuento": 5000,
         "imagen_principal": "/images/casa-chica/imagen5_5_11zon.webp"
@@ -24,6 +24,7 @@
         "name": "Casa grande",
         "description": "Amplia casa que dispone de dos habitaciones, comedor, living con cocina integrada, parrilla, galería y baño, ideal para disfrutar de momentos inolvidables.",
         "images": [
+            "/images/casa-grande/imagen-principal.jpg",
             "/images/casa-grande/imagen0_11zon.webp",
             "/images/casa-grande/imagen1_11zon.webp",
             "/images/casa-grande/imagen3_11zon.webp",
@@ -35,9 +36,9 @@
             "/images/casa-grande/imagen9.webp",
             "/images/casa-grande/imagen10.webp"
         ],
-        "services": ["Cocina", "1 Baño", "2 habitaciones", "Parrilla", "Wifi", "Heladera", "Freezer", "Comedor", "Sofa cama", "Piscina"],
+        "services": ["Cocina", "1 Baño", "2 habitaciones", "Parrilla", "Wifi", "Heladera", "Freezer", "Comedor", "Aire acondicionado", "Sofa cama", "Piscina"],
         "precio": 65000,
         "descuento": 5000,
-        "imagen_principal": "/images/casa-grande/imagen10.webp"
+        "imagen_principal": "/images/casa-grande/imagen-principal.jpg"
     }
 ]
